@@ -1,0 +1,26 @@
+# Arquivos compilados
+*.class
+classes/
+*.jar
+
+# Arquivos de teste gerados
+animais.txt
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Arquivos temporários
+*.tmp
+*.temp
+*~
