@@ -72,8 +72,12 @@ public class Main {
             new Gato("Mimi", 2, "Siamês", true),
             new Cachorro("Bella", 1, "Golden Retriever", false)
         };
-        
-        try (AnimalOutputStream out = new AnimalOutputStream(System.out, lista)) {
+
+        //ovos parametros: enviar 2 objetos, com 3 atributos (nome, idade, raca) e 20 bytes por atributo
+        String[] atributosParaEnviar = {"nome", "idade", "raca"};
+        int numBytesPorAtributo = 20;
+
+        try (AnimalOutputStream out = new AnimalOutputStream(System.out, lista, lista.length, atributos, bytesPorAtributo)) {
             System.out.println("Enviando animais para System.out:");
             out.enviar();
             System.out.println("✓ Teste de saída padrão concluído!");
@@ -94,8 +98,10 @@ public class Main {
             new Cachorro("Luna", 2, "Pastor Alemão", true)
         };
         
-        try (FileOutputStream arquivo = new FileOutputStream("animais.txt");
-             AnimalOutputStream out = new AnimalOutputStream(arquivo, lista)) {
+        String[] atributosParaEnviar = {"nome", "idade", "raca"};
+        int numBytesPorAtributo = 20;
+
+        try (AnimalOutputStream out = new AnimalOutputStream(new FileOutputStream("animais.txt"), lista, lista.length, atributosParaEnviar, numBytesPorAtributo)) {
             out.enviar();
             
             System.out.println("✓ Arquivo 'animais.txt' criado com sucesso!");

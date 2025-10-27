@@ -7,10 +7,16 @@ import java.io.OutputStream;
 public class AnimalOutputStream extends OutputStream {
     private OutputStream destino;
     private Animal[] animais;
+    private int numeroObjetosParaEnviar;
+    private String[] atributosParaEnviar;
+    private int numBytesPorAtributo;
 
-    public AnimalOutputStream(OutputStream destino, Animal[] animais) {
+    public AnimalOutputStream(OutputStream destino, Animal[] animais, int numeroObjetosParaEnviar, String[] atributosParaEnviar, int numBytesPorAtributo) {
         this.destino = destino;
         this.animais = animais;
+        this.numeroObjetosParaEnviar = numeroObjetosParaEnviar;
+        this.atributosParaEnviar = atributosParaEnviar;
+        this.numBytesPorAtributo = numBytesPorAtributo;
     }
 
     @Override
