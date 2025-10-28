@@ -1,5 +1,6 @@
 import model.*;
 import stream.AnimalOutputStream;
+import stream.AnimalInputStream;
 import java.io.*;
 import java.util.Scanner;
 
@@ -77,7 +78,7 @@ public class Main {
         String[] atributosParaEnviar = {"nome", "idade", "raca"};
         int numBytesPorAtributo = 20;
 
-        try (AnimalOutputStream out = new AnimalOutputStream(System.out, lista, lista.length, atributos, bytesPorAtributo)) {
+        try (AnimalOutputStream out = new AnimalOutputStream(System.out, lista, lista.length, atributosParaEnviar, numBytesPorAtributo)) {
             System.out.println("Enviando animais para System.out:");
             out.enviar();
             System.out.println("✓ Teste de saída padrão concluído!");
@@ -176,5 +177,30 @@ public class Main {
         }
         
         System.out.println("\n✓ Demonstração POO concluída!");
+    }
+    
+    /**
+     * Teste 4: Leitura de arquivo - Use AnimalInputStream("animais.txt")
+     */
+    private static void testeLeituraArquivo() {
+        System.out.println("\n=== TESTE LEITURA DE ARQUIVO ===");
+        try (AnimalInputStream in = new AnimalInputStream(new FileInputStream("animais.txt"))) {
+            in.lerProximoAnimal();
+        } catch (IOException e) {
+            System.err.println("Erro: " + e.getMessage());
+        }
+    }
+    
+    /**
+     * Teste 5: Leitura de dados do System.in - Use AnimalInputStream(System.in)
+     */
+    private static void testeLeituraSystemIn() {
+        System.out.println("\n=== TESTE LEITURA DE SYSTEM.IN ===");
+        System.out.println("Digite linhas de dados de animais (Ctrl+D para terminar):");
+        try (AnimalInputStream in = new AnimalInputStream(System.in)) {
+            in.lerProximoAnimal();
+        } catch (IOException e) {
+            System.err.println("Erro: " + e.getMessage());
+        }
     }
 }
