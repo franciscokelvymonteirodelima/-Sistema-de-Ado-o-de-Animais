@@ -118,11 +118,5 @@ outFile.enviar();
 ## 🏆 Características do Projeto
 
 - ✅ **Fácil de implementar**
-- ✅ **Tema original** (fora do PDF do professor)
+- ✅ **Tema original**
 - ✅ **Cobre todos os pontos obrigatórios** de Sistemas Distribuídos
-- ✅ **Código limpo e bem documentado**
-- ✅ **Pronto para GitHub**
-
-## 👨‍💻 Desenvolvido por
-
-Sistema desenvolvido para trabalho de **Sistemas Distribuídos** - demonstrando POO, Streams, Sockets e Serialização em Java.

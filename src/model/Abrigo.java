@@ -14,10 +14,10 @@ public class Abrigo {
     public Abrigo(String nome) {
         this.nome = nome;
         this.animais = new ArrayList<>();
-        this.id = 0; // Placeholder, should be set appropriately
-        this.endereco = ""; // Placeholder, should be set appropriately
-        this.telefone = ""; // Placeholder, should be set appropriately
-        this.email = ""; // Placeholder, should be set appropriately
+        this.id = 0; 
+        this.endereco = ""; 
+        this.telefone = "";
+        this.email = ""; 
     }
     
     public String getNome() {
